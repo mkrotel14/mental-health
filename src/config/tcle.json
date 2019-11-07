@@ -1,0 +1,6 @@
+{
+  "titulo": "Mental Health",
+  "objetivo": "O objetivo desse projeto é avaliar a saúde mental dos usuários tendo como base para as questões desenvolvidas a Bateria Fatorial de Personalidade. Sendo um aplicativo desenvolvido para a disciplina de Projeto Interdisciplinar IV, os resultados obtidos com esse teste não devem ser levados como um único ponto de vista e mais como uma estimativa de possíveis problemas relacionados ao neuroticismo.",
+  "riscos": "Você pode achar que determinadas perguntas podem incomodar porque as perguntas que iremos fazer são sobre suas experiências pessoais. Assim você pode se sentir incomodado ao se deparar com algumas perguntas e escolher não responde-las, fazendo isso você não terá a resposta final do seu teste.",
+  "confidencialidade": "Nenhum dado pessoal será coletado, portanto, seu nome não terá nenhum vínculo com as perguntas realizadas e não coletaremos os resultados finais para qualquer tipo de divulgação."
+}
