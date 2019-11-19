@@ -55,10 +55,3 @@ export default function Main({navigation}) {
     </Root>
   );
 }
-
-const styles = StyleSheet.create({
-  IconStyle: {
-    marginLeft: 10,
-    marginTop: 5,
-  },
-});
