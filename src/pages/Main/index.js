@@ -1,55 +1,52 @@
 import React, {useState} from 'react';
-import {Dimensions, Switch, StyleSheet} from 'react-native';
+import {Switch} from 'react-native';
 
 import Root from '~/components/Root';
 import ActionButton from '~/components/ActionButton';
 import Header from '~/components/Header';
+import Card from '~/components/Card';
 import * as tcle from '~/config/tcle.json';
 
-import {totalWidth} from '~/helpers';
-
-import {
-  ScrollTCLE,
-  TCLE,
-  Label,
-  LabelHeader,
-  MainCard,
-  SwitchText,
-  SwitchContainer,
-} from './styles';
-
-const {height, width} = Dimensions.get('screen');
+import {ScrollTCLE, TCLE, SwitchText} from './styles';
 
 export default function Main({navigation}) {
   const [switchVal, setSwitch] = useState(false);
   return (
     <Root>
       <Header title="Teste de Personalidade" />
-      <MainCard width={totalWidth(width)} height={height}>
-        <LabelHeader>
-          <Label>Termo de Consentimento Livre e Esclarecido</Label>
-        </LabelHeader>
+      <Card
+        header={true}
+        headerText="Termo de Consentimento Livre e Esclarecido"
+        footer={
+          <>
+            <SwitchText>Estou de acordo com os termos</SwitchText>
+            <Switch
+              value={switchVal}
+              onValueChange={val => setSwitch(!switchVal)}
+            />
+          </>
+        }>
         <ScrollTCLE>
           <TCLE>Titulo: {tcle.titulo}</TCLE>
           <TCLE>Objetivo: {tcle.objetivo}</TCLE>
           <TCLE>Riscos: {tcle.riscos}</TCLE>
           <TCLE>Confidencialidade: {tcle.confidencialidade}</TCLE>
         </ScrollTCLE>
-        <SwitchContainer>
-          <SwitchText>Estou de acordo com os termos</SwitchText>
-          <Switch
-            value={switchVal}
-            onValueChange={val => setSwitch(!switchVal)}
-          />
-        </SwitchContainer>
-      </MainCard>
+      </Card>
+      {/* <MainCard width={totalWidth(width)} height={height}>
+        <LabelHeader>
+          <Label />
+        </LabelHeader>
+
+        <SwitchContainer />
+      </MainCard> */}
       <ActionButton
         type="outline"
-        title="Fazer o teste"
+        title="Prosseguir"
         loading={false}
         disabled={!switchVal}
         onPress={() => {
-          navigation.navigate('Questionario');
+          navigation.navigate('Instructions');
         }}
       />
     </Root>

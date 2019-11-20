@@ -10,7 +10,7 @@ import Header from '~/components/Header';
 import Questao from '~/components/Questao';
 import Root from '~/components/Root';
 
-import {Text, ButtonContainer} from './styles';
+import {ButtonContainer, ProgressoText, Text} from './styles';
 
 const {height} = Dimensions.get('screen');
 
@@ -39,7 +39,7 @@ export default function Questionario({navigation}) {
               </AnimatedCircularProgress>
             </Left>
             <Right>
-              <Text>Progresso do Questionário</Text>
+              <ProgressoText>Progresso do Questionário</ProgressoText>
             </Right>
           </CardItem>
           <CardItem>
@@ -70,25 +70,45 @@ export default function Questionario({navigation}) {
           <CardItem footer>
             <ButtonContainer>
               {quest !== 34 ? (
-                <Button
-                  buttonStyle={styles.ButtonNextStyle}
-                  titleStyle={styles.ButtonTextStyle}
-                  icon={
-                    <Icon
-                      style={styles.ButtonIconStyle}
-                      name="arrow-right"
-                      size={15}
-                      color="white"
-                    />
-                  }
-                  iconRight
-                  title="Próxima Questão"
-                  onPress={() => {
-                    if (quest < 34) {
-                      setQuest(quest + 1);
+                <>
+                  <Button
+                    type="clear"
+                    icon={
+                      <Icon
+                        style={styles.ButtonIconStyle}
+                        name="arrow-left"
+                        size={15}
+                        color="#33b5e5"
+                      />
                     }
-                  }}
-                />
+                    iconLeft
+                    title="Voltar Questão"
+                    onPress={() => {
+                      if (quest > 1) {
+                        setQuest(quest - 1);
+                      }
+                    }}
+                  />
+                  <Button
+                    buttonStyle={styles.ButtonNextStyle}
+                    titleStyle={styles.ButtonTextStyle}
+                    icon={
+                      <Icon
+                        style={styles.ButtonIconStyle}
+                        name="arrow-right"
+                        size={15}
+                        color="white"
+                      />
+                    }
+                    iconRight
+                    title="Próxima Questão"
+                    onPress={() => {
+                      if (quest < 34) {
+                        setQuest(quest + 1);
+                      }
+                    }}
+                  />
+                </>
               ) : (
                 <Button
                   buttonStyle={styles.ButtonDoneStyle}
@@ -129,6 +149,7 @@ const styles = StyleSheet.create({
   },
   ButtonNextStyle: {
     backgroundColor: '#33b5e5',
+    margin: 2,
   },
   ButtonDoneStyle: {
     backgroundColor: '#00c851',

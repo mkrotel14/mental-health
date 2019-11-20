@@ -1,0 +1,8 @@
+{
+  "cabecalho": "Para anotar as respostar, siga as instruções abaixo:",
+  "ponto1": "Para Cada item, você tem a opção de marcar de '1' a '7'. Se você achar que a sentença absolutamente não o descreve adequadamente, marque '1'.",
+  "ponto4": "Se você considerar que a frase o descreve 'mais ou menos', marque '4'.",
+  "ponto7": "Se você achar que a frase o descreve muito bem, marque '7'.",
+  "segundo": "Considere que quanto mais você achar que a frase é adequada para descrevê-lo, maior deve ser o valor a ser marcado na escala (respostas 5, 6 e 7); quanto menos você identificar-se com a descrição feita, menor será o valor a ser registrado na escala (respostas 1, 2 e 3). Note que todos os valores da escala podem ser marcados.",
+  "terceiro": "Não existem respostar certas ou erradas. É importante que sias respostas sejam sinceras."
+}
