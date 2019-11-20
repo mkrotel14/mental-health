@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import * as perguntas from '~/config/perguntas.json';
+
+import {Question} from './styles';
 
 export default function Questao({navigation, quest}) {
   return (
-    <View>
-      <Text>Questão {quest}</Text>
-    </View>
+    <>
+      <Question>{perguntas[quest]}</Question>
+    </>
   );
 }
